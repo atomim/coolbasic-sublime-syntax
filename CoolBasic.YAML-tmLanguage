@@ -11,8 +11,10 @@ patterns:
 - name: comment.multiline
   begin: (?i)REMSTART
   end: (?i)REMEND
+- name: punctuation
+  match: (,|\(|\)|\[|\]|:)
 - name: keyword.operator
-  match: (\+|-|\*|=|\/|\<|\>|\\|\.)
+  match: (\+|-|\*|=|\/|\<|\>|\\|\.|\^)
 - name: keyword
   match: >
     (?x)
@@ -77,5 +79,14 @@ patterns:
     Time|Timer|TranslateCamera|TranslateObject|Trim|True|TurnCamera|TurnObject|
     Unlock|UpdateGame|UpKey|Upper|VerticalText|Wait|WaitKey|WaitMouse|
     WrapAngle|Write|WriteByte|WriteFloat|WriteInt|WriteLine|WriteShort|WriteString)\s*\b
-
+- name: string.quoted
+  match: \".*?\"
+- name: constant.numeric
+  match: \d+(\.\d+)?
+- name: variable
+  match: (\w|\$|#|%)+
+- name: text
+  match: \s+
+- name: punctuation
+  match: (.+)
 ...
