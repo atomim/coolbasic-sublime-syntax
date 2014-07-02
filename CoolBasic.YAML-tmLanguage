@@ -8,5 +8,74 @@ uuid: 4ad84d94-2d26-4795-8801-1f78b57102fd
 patterns:
 - name: comment.singleline
   match: (\'|//).{0,}\n
-- 
+- name: comment.multiline
+  begin: (?i)REMSTART
+  end: (?i)REMEND
+- name: keyword.operator
+  match: (\+|-|\*|=|\/|\<|\>|\\|\.)
+- name: keyword
+  match: >
+    (?x)
+    \b(
+    (?i)
+    (As|Case|Data|Each|Else|ElseIf|End|EndFunction|EndIf|EndSelect|EndType|EndSearch|Exit|
+    Field|For|Forever|Function|Gosub|Goto|If|New|Next|Read|Repeat|Restore|Return|Select|Step|
+    Then|To|Type|Until|Wend|While)\s*
+    )\b
+- name: keyword.constant
+  match: >
+    (?x)
+    \b(
+    (?i)\b(NULL|OFF|ON)\s*\b|
+    (?i)\bcbkey[a-z0-1]\s*\b|
+    (?i)\bcbkeyf([0-9]|10|11|12)\s*\b|
+    (?i)\bcbkeynum[0-9]\s*\b|
+    (?i)\bcbkey(esc|print|scroll|pause|oem102|minus|equals|backspace|insert|home|pgup|numlock|divide|multiply|subtract|tab|\]|\[|return|
+    del|end|pgdown|capslock|semicolon|apostrophe|grave|lshift|backslash|comma|period|slash|shift|enter|lcontrol|lwin|lalt|space|ralt|rwin|
+    apps|rcontrol|decimal|up|down|left|right)\s*\b|
+    (?i)\bcb(Red|Orange|Yellow|Green|Blue|Purple|LightRed|Pink|LightYellow|LightGreen|LightBlue|LightPurple|DarkRed|DarkYellow|DarkGreen|
+    DarkBlue|DarkPurple|Cyan|Magenta|Black|White|Silver|Gold|Dark|WhiteSkin|BlackSkin)\s*\b
+    )\b
+- name: keyword
+  match: >
+    (?x)
+    (?i)\b(
+    Abs|ACos|AddText|After|AnimationHeight|AnimationPlaying|AnimationWidth|
+    Asc|ASin|ATan|Before|Bin|BLUE|Box|BoxOverlap|Byte|CallDLL|
+    CameraAngle|CameraFollow|CameraPick|CameraX|CameraY|CenterText|ChDir|Chr|Circle|
+    ClearArray|ClearCollisions|ClearKeys|ClearMouse|ClearObjects|ClearText|CloneCameraOrientation|CloneCameraPosition|CloneImage|CloneObject|
+    CloneObjectOrientation|CloneObjectPosition|CloseFile|CloseInput|Cls|ClsColor|CollisionAngle|CollisionX|CollisionX|Color|
+    CommandLine|Const|ConvertToInteger|ConvertToType|CopyBox|CopyFile|Cos|CountCollisions|CountWords|Crc32|
+    CurrentDir|CurveAngle|CurveValue|Date|Decrypt|Default|DefaultMask|DefaultVisible|Delete|
+    DeleteFile|DeleteFont|DeleteImage|DeleteMEMBlock|DeleteObject|DeleteSound|Dim|Distance|Distance2|Dot|
+    DownKey|DrawAnimation|DrawGame|DrawGhostImage|DrawImage|DrawImageBox|DrawScreen|DrawToImage|DrawToScreen|DrawToWorld|
+    EditMap|Ellipse|Encrypt|
+    EOF|Errors|EscapeKey|Execute|False|FileExists|
+    FileOffset|FileSize|FindFile|First|Flip|Float|FPS|FrameLimit|
+    GetAngle|GetAngle2|GetCollision|GetEXEName|GetKey|GetMap|GetMap2|GetMouse|GetPixel|
+    GetPixel2|getRGB|GetWord|GFXModeExists|GhostObject|Global|GotoSavedLocation|GREEN|
+    Hex|HotSpot|Image|ImageHeight|ImagesCollide|ImagesOverlap|ImageWidth|Include|InitObjectList|
+    Input|Insert|InStr|Int|Integer|IsDirectory|KeyDown|KeyHit|KeyUp|Last|Left|
+    LeftKey|Len|Line|LoadAnimImage|LoadAnimObject|LoadFont|LoadImage|LoadMap|LoadObject|LoadProgram|
+    LoadSound|Locate|Lock|Log|Log10|LoopObject|Lower|LSet|MakeDir|MakeEmitter|
+    MakeError|MakeImage|MakeMap|MakeMEMBlock|MakeObject|MakeObjectFloor|MapHeight|MapWidth|MaskImage|MaskObject|
+    Max|MEMBlockSize|MemCopy|Min|Mid|MirrorObject|MouseDown|MouseHit|MouseMoveX|
+    MouseMoveY|MouseMoveZ|MouseUp|MouseWX|MouseWY|MouseX|MouseY|MouseX|MoveCamera|MoveObject|
+    NextObject|ObjectAngle|ObjectFloat|ObjectFrame|ObjectInteger|ObjectLife|
+    ObjectOrder|ObjectPick|ObjectPickable|ObjectPlaying|ObjectRange|ObjectSight|ObjectSizeX|ObjectSizeY|ObjectsOverlap|ObjectString|
+    ObjectX|ObjectY|OpenToEdit|OpenToRead|OpenToWrite|PaintObject|ParticleAnimation|
+    ParticleEmission|ParticleMovement|PeekByte|PeekFloat|PeekInt|PeekShort|PI|PickColor|PickedAngle|PickedObject|
+    PickedX|PickedY|PickImageColor|PickImageColor2|PixelPick|PlayAnimation|PlayObject|PlaySound|PointCamera|PointObject|
+    PokeByte|PokeFloat|PokeInt|PokeShort|PositionCamera|PositionMouse|PositionObject|Print|PutPixel|PutPixel2|
+    Rand|Randomize|ReadByte|ReadFloat|ReadInt|ReadLine|ReadShort|ReadString|RED|
+    ReDim|Replace|ResetObjectCollision|ResizeImage|ResizeMEMBlock|Right|RightKey|
+    Rnd|RotateCamera|RotateImage|RotateObject|RoundDown|RoundUp|RSet|SAFEEXIT|SaveImage|
+    SaveProgram|SCREEN|ScreenDepth|ScreenGamma|ScreenHeight|ScreenPositionObject|ScreenShot|ScreenWidth|SeekFile|
+    SetFont|SetMap|SetSound|SetTile|SetupCollision|SetWindow|Short|ShowMouse|ShowObject|
+    Sin|Smooth2D|SoundPlaying|Sqrt|StartSearch|StopAnimation|StopObject|StopSound|
+    Str|String|StrInsert|StrMove|StrRemove|Tan|Text|TextHeight|TextWidth|
+    Time|Timer|TranslateCamera|TranslateObject|Trim|True|TurnCamera|TurnObject|
+    Unlock|UpdateGame|UpKey|Upper|VerticalText|Wait|WaitKey|WaitMouse|
+    WrapAngle|Write|WriteByte|WriteFloat|WriteInt|WriteLine|WriteShort|WriteString)\s*\b
+
 ...
