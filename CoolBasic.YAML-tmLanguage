@@ -15,7 +15,7 @@ patterns:
   match: (,|\(|\)|\[|\]|:)
 - name: keyword.operator
   match: (\+|-|\*|=|\/|\<|\>|\\|\.|\^)
-- name: keyword
+- name: keyword.control
   match: >
     (?x)
     \b(
@@ -83,9 +83,9 @@ patterns:
   match: \".*?\"
 - name: constant.numeric
   match: \d+(\.\d+)?
-- name: variable
+- name: punctuation
   match: (\w|\$|#|%)+
-- name: text
+- name: variable
   match: \s+
 - name: punctuation
   match: (.+)
