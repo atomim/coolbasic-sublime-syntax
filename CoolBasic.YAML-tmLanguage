@@ -1,0 +1,12 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: CoolBasic Compiled
+scopeName: source.cb_compiled
+fileTypes: [CB]
+uuid: 4ad84d94-2d26-4795-8801-1f78b57102fd
+
+patterns:
+- name: comment.singleline
+  match: (\'|//).{0,}\n
+- 
+...
